@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+      
+     
+
+        <!-- Tree View -->
+        <record id="shipbox_service_type_tree_view" model="ir.ui.view">
+            <field name="name">shipbox.service.type.tree.view</field>
+            <field name="model">shipbox.service.type</field>
+            <field name="arch" type="xml">
+                <tree string="ShipBox" create='0' edit='0' delete='0' >                 
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="sorder"/>
+                    <field name="shipbox_id"  />
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+      
+
+        <record id="shipbox_service_type_action" model="ir.actions.act_window">
+            <field name="name">Shipbox Service Type</field>
+            <field name="res_model">shipbox.service.type</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create new Shipbox Service Type.
+                </p>
+            </field>
+        </record>
+
+        
+       
+         
+        <menuitem id="shipbox_service_type_main_menu" name="Service Type"
+                  parent="shopix_connector_configuration"
+                  action="shipbox_service_type_action"
+                  groups="base.group_user"/>
+        
+       
+
+
+      
+  </data>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+          
+        <record id="group_shipox_admin" model="res.groups">
+           <field name="name">Shipox Administrator</field>
+       </record>
+        
+    </data>
+</odoo>

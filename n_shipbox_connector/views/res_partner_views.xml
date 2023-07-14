@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+          
+        <record id="view_res_partner_form_shipox" model="ir.ui.view">
+        <field name="name">res.partner.form.shipox</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+               <xpath expr="//notebook" position="inside">               
+                   <page string='Shipox' name='shipox_detail' >
+                       <group>
+                           <group>
+                             <field name='shipox_country_id' options="{'no_open': True,'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />
+                             <field name='shipox_city_id' options="{'no_open': True,'no_create': True, 'no_quick_create': True, 'no_create_edit':True}" />  
+                           </group>
+                       
+                       </group>
+                   
+                   </page>
+               </xpath>
+            
+             </field>
+          </record>
+    </data>
+</odoo>

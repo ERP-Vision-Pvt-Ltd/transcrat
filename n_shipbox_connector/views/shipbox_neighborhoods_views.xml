@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+      
+     
+
+        <!-- Tree View -->
+        <record id="shipbox_neighborhoods_tree_view" model="ir.ui.view">
+            <field name="name">shipbox.neighborhoods.tree.view</field>
+            <field name="model">shipbox.neighborhoods</field>
+            <field name="arch" type="xml">
+                <tree string="ShipBox" create='0' edit='0' delete='0' >                 
+                    <field name="name"/>
+                    <field name="shipbox_id"  />
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+      
+
+        <record id="shipbox_night_action" model="ir.actions.act_window">
+            <field name="name">Shipbox Neighborhoods</field>
+            <field name="res_model">shipbox.neighborhoods</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create new Shipbox neighborhoods.
+                </p>
+            </field>
+        </record>
+
+        
+       
+         
+        <menuitem id="shipbox_neighborhoods_main_menu" name="Neighborhoods"
+                  parent="shopix_connector_configuration"
+                  action="shipbox_night_action"
+                  groups="base.group_user"/>
+        
+       
+
+
+      
+  </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+          
+        <record id="view_stock_picking_form_type_shipox" model="ir.ui.view">
+        <field name="name">stock.picking.form.shipox</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+               <xpath expr="//field[@name='origin']" position="after">               
+                    <field name="sync_shipox_status" invisible='1' />
+                   <field name="shipox_data" invisible='1' />
+                   <field name="shipox_order_number" readonly='1'/>
+               </xpath>
+            
+               <xpath expr="//header" position="inside">               
+                  <button name="action_post_shipox_data" attrs="{'invisible': ['|',('sync_shipox_status', '=', True),('shipox_data', '!=', 'manually')]}" string="Shipox Upload" type="object" class="oe_highlight"  />
+
+               </xpath>
+            
+             </field>
+          </record>
+    </data>
+</odoo>

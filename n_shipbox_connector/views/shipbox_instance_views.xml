@@ -1,0 +1,117 @@
+<odoo>
+  <data>
+      
+      <!-- Form View -->
+        <record id="shipbox_instance_form_view" model="ir.ui.view">
+            <field name="name">shipbox.instance.form.view</field>
+            <field name="model">shipbox.instance</field>
+            <field name="arch" type="xml">
+                <form string="Shipbox" delete='0' >
+                    <header>
+                       <field name="state" widget="statusbar"
+                               statusbar_visible="draft,active,close" clickable='1'/>
+                        <button name="action_check_connection" string="Check Connection"
+                                type="object" class="btn-primary"
+                                />
+                        <button name="action_active" string="Active"
+                                type="object" class="btn-primary"
+                                states="draft"
+                                />
+                        <button name="action_get_master_data" string="Get Master Data"
+                                type="object" class="btn-primary" states="active"
+                                />
+                        <button name="action_post_data" string="Post Data"
+                                type="object" class="btn-primary" states="active"
+                                />
+                        
+                        <button name="action_get_and_update_picking_status" string="Fetch Delivery Status"
+                                type="object" class="btn-primary" states="active"
+                                />
+                        
+                        <button name="action_reset" string="Reset To Draft"
+                                type="object" 
+                                states="active"
+                                />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Name ...." attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="auth_url"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="username"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="recipient_not_available"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="payer"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="token"  invisible='1'/>
+                                <field name="pkg_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}"  options="{'no_open': True,'no_create': True, 'no_quick_create': True, 'no_create_edit':True}"/>
+                            </group>
+                            
+                            <group>
+                                <field name="order_url"   attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="password"  widget='password' attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="payment_type"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="company_id"  attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="delivered_status" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                            </group>
+                           
+                        </group>
+                        
+                    </sheet>
+                    
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="shipbox_instance_tree_view" model="ir.ui.view">
+            <field name="name">shipbox.instance.tree.view</field>
+            <field name="model">shipbox.instance</field>
+            <field name="arch" type="xml">
+                <tree string="ShipBox" delete='0' >                 
+                    <field name="name"/>
+                    <field name="auth_url"  />
+                    <field name="order_url" />
+                    <field name="username"  />
+                    <field name="password" />
+                </tree>
+            </field>
+        </record>
+      
+
+        <record id="shipbox_instance_action" model="ir.actions.act_window">
+            <field name="name">Shipbox Instance</field>
+            <field name="res_model">shipbox.instance</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create new Shipbox Instance.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- MenuItems -->
+        
+        
+        <menuitem id="shopix_connector_configuration" name="Shipox"
+                  parent="stock.menu_stock_root"
+                  groups="n_shipbox_connector.group_shipox_admin"
+                  />
+        
+        
+       
+         
+        <menuitem id="shipbox_connec_main_menu" name="Instance"
+                  parent="shopix_connector_configuration"
+                  action="shipbox_instance_action"
+                  groups="base.group_user"/>
+        
+       
+
+
+      
+  </data>
+</odoo>
