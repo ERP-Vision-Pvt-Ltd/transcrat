@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shipbox_instance,access.shipbox.instance,model_shipbox_instance,,1,1,1,1
+access_shipbox_city,access.shipbox.city,model_shipbox_city,,1,1,1,1
+access_shipbox_country,access.shipbox.country,model_shipbox_country,,1,1,1,1
+access_shipbox_neighborhoods,access.shipbox.neighborhoods,model_shipbox_neighborhoods,,1,1,1,1
+access_shipbox_service_type,access.shipbox.service.type,model_shipbox_service_type,,1,1,1,1
