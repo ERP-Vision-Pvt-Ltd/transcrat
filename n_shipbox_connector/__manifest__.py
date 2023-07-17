@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "ShipBox Connector",
+    'name': "Transcrate Odoo Connector",
 
     'summary': """
-        ShipBox Connector(Transcrate Integration with ODOO V-16)
+        Transcrate Odoo ConnectorTranscrate Integration with ODOO V-16)
         """,
 
     'description': """
-       ShipBox Connector(Transcrate Integration with ODOO V-16)
+       Transcrate Odoo Connector(Transcrate Integration with ODOO V-16)
     """,
 
     'author': "ERP VISION",
