@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Transcrate Odoo Connector",
+    'name': "Transcrate Shipox Odoo Connector",
 
     'summary': """
         Transcrate Odoo ConnectorTranscrate Integration with ODOO V-16)
