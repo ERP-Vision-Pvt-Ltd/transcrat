@@ -41,7 +41,7 @@
         'demo/demo.xml',
     ],
     'license': 'LGPL-3',
-    'price':'1.0',
+    'price':'350.0',
     'currency': 'USD',
     'images': ['static/description/images/main_screenshot.png'],
     'maintainer':'ERP VISION',
