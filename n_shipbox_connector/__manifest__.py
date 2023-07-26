@@ -43,7 +43,7 @@
     'license': 'LGPL-3',
     'price':'350.0',
     'currency': 'USD',
-    'images': ['static/description/images/shipox.gif'],
+    'images': ['static/description/images/transcate.gif'],
     'maintainer':'ERP VISION',
     'installable': True,
     'application': True,
